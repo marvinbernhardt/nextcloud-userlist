@@ -1,7 +1,3 @@
 .git/
-old/
-build/
-tests/
-tutorial/
 push-to-server.sh
 lftp-exclude-list.txt
