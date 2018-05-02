@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>userlist</id>
+    <name>User List</name>
+    <summary>Show a list of all local users</summary>
+    <description><![CDATA[This Nextcloud App displays a simple static list of all local users of a Nextcloud instance. Various contact information is displayed (email, groups, phone number).
+
+This functionality cannot be achieved with the current apps (2018-04), but is planned for the future:
+https://github.com/nextcloud/server/issues/693
+This app may then become redundant.]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="muffin91@gmx.de" >Marvin Bernhardt</author>
+    <namespace>UserList</namespace>
+    <category>organization</category>
+    <bugs>https://github.com/marvinbernhardt/nextcloud-userlist/issues</bugs>
+    <dependencies>
+        <nextcloud min-version="12"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>User List</name>
+            <route>userlist.page.index</route>
+        </navigation>
+    </navigations>
+</info>
