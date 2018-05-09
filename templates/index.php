@@ -1,5 +1,5 @@
 <?php
-script('userlist', 'script');
+script('userlist', 'list.min');
 style('userlist', 'style');
 ?>
 
