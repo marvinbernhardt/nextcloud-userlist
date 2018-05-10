@@ -1,4 +1,0 @@
-.git/
-.gitignore
-push-to-server.sh
-lftp-exclude-list.txt
