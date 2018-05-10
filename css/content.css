@@ -1,0 +1,23 @@
+#userlist {
+    margin: 16px;
+}
+
+#userlist table {
+    width: 100%;
+}
+
+#userlist td, #userlist th {
+    padding: 8px;
+}
+
+#userlist tr:nth-child(even){background-color: #eee;}
+
+#userlist tr:hover {background-color: #ddd;}
+
+#userlist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3FBDE7;
+    color: white;
+}

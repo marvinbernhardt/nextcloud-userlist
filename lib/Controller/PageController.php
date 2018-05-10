@@ -28,8 +28,9 @@ class PageController extends Controller {
      */
     public function index() {
         $userlistdao = new UserListDAO();
-        $list = $userlistdao->return_list();
-        return new TemplateResponse('userlist', 'index', ['list' => $list]);
+        $userlist = $userlistdao->return_userlist();
+        $grouplist = $userlistdao->return_grouplist();
+        return new TemplateResponse('userlist', 'index', ['userlist' => $userlist, 'grouplist' => $grouplist]);
     }
 
 }

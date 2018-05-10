@@ -1,10 +1,21 @@
-<ul>
-	<li><a href="#">First level entry</a></li>
-	<li>
-		<a href="#">First level container</a>
-		<ul>
-			<li><a href="#">Second level entry</a></li>
-			<li><a href="#">Second level entry</a></li>
-		</ul>
-	</li>
+<?php
+script('userlist', 'navigation');
+style('userlist', 'navigation');
+?>
+
+<ul id="userlist-navigation">
+<li>
+    <a href="#" search-group="">Alle</a>
+</li>
+<?php
+foreach($_['grouplist'] as $group)
+{
+    $gid = $group['gid'];
+?>
+<li>
+    <a href="#" search-group="<?php p($gid);?>"><?php p($gid);?></a>
+</li>
+<?php
+}
+?>
 </ul>

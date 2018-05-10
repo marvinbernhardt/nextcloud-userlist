@@ -1,28 +1,43 @@
 <?php
 script('userlist', 'content');
+style('userlist', 'content');
 ?>
 
-<div id="users">
-    <input class="search" placeholder="Suchen..." />
+<div id="userlist">
+    <h2>Liste aller Benutzer</h2>
+    <input id="userlist-search" class="search" placeholder="Suchen..." />
     <table style="width:100%">
         <thead>
             <tr>
                 <th class="sort" data-sort="name">Name</th>
-                <th>E-Mail-Adresse</th>
-                <th>Telefonnummer</th>
                 <th class="sort" data-sort="groups">Gruppen</th>
+                <th class="sort" data-sort="email">E-Mail-Adresse</th>
+                <th class="sort" data-sort="phone">Telefonnummer</th>
             </tr>
         </thead>
         <tbody class="list">
+
 <?php
-foreach($_['list'] as $x => $x_value)
+foreach($_['userlist'] as $user)
 {
-    $user_info = json_decode($x_value['dat']);
+    $user_info = json_decode($user['account_data']);
 ?>
+
 <tr>
     <td class="name">
 <?php
     p($user_info->{'displayname'}->{'value'});
+?>
+    </td>
+    <td class="groups">
+<?php
+    foreach(explode(", ", $user['groups']) as $group)
+    {
+        p($group);
+?>
+<br>
+<?php
+    }
 ?>
     </td>
     <td class="email">
@@ -32,14 +47,9 @@ foreach($_['list'] as $x => $x_value)
 ?>
         </a>
     </td>
-    <td class="">
+    <td class="phone">
 <?php
     p($user_info->{'phone'}->{'value'});
-?>
-    </td>
-    <td class="groups">
-<?php
-    p($x_value['groups']);
 ?>
     </td>
 </tr>
