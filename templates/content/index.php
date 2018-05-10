@@ -34,8 +34,7 @@ foreach($_['userlist'] as $user)
     foreach(explode(", ", $user['groups']) as $group)
     {
         p($group);
-?>
-<br>
+?><br>
 <?php
     }
 ?>

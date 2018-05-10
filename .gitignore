@@ -1,4 +1,4 @@
 /old
 /tutorial
 /push-to-server.sh
-/lftp-ignore-list.txt
+/lftp-exclude-list.txt

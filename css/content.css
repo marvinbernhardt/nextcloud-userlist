@@ -10,9 +10,13 @@
     padding: 8px;
 }
 
-#userlist tr:nth-child(even){background-color: #eee;}
+#userlist tr:nth-child(even){
+    background-color: #eee;
+}
 
-#userlist tr:hover {background-color: #ddd;}
+#userlist tr:hover {
+    background-color: #ddd;
+}
 
 #userlist th {
     padding-top: 12px;
@@ -20,4 +24,8 @@
     text-align: left;
     background-color: #3FBDE7;
     color: white;
+}
+
+#userlist th:hover {
+    background-color: #1F9DC7;
 }
