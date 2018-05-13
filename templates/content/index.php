@@ -25,9 +25,7 @@ foreach($_['userlist'] as $user)
 
 <tr>
     <td class="name">
-<?php
-    p($user_info->{'displayname'}->{'value'});
-?>
+        <?php p($user_info->{'displayname'}->{'value'}); ?>
     </td>
     <td class="groups">
 <?php
@@ -41,15 +39,11 @@ foreach($_['userlist'] as $user)
     </td>
     <td class="email">
         <a href="mailto:<?php p($user_info->{'email'}->{'value'}); ?>">
-<?php
-    p($user_info->{'email'}->{'value'});
-?>
+            <?php p($user_info->{'email'}->{'value'}); ?>
         </a>
     </td>
     <td class="phone">
-<?php
-    p($user_info->{'phone'}->{'value'});
-?>
+        <?php p($user_info->{'phone'}->{'value'}); ?>
     </td>
 </tr>
 <?php
@@ -57,4 +51,8 @@ foreach($_['userlist'] as $user)
 ?>
         </tbody>
     </table>
+    <br>
+    <h2>E-Mail-Adressen zum Kopieren</h2>
+    <div id="userlist-emaillist"></div>
+    <button id="userlist-emaillist-copy">In die Zwischenablage kopieren</button>
 </div>
