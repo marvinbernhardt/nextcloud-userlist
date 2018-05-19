@@ -1,5 +1,4 @@
 <?php
-script('userlist', 'navigation');
 style('userlist', 'navigation');
 ?>
 
