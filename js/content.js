@@ -5,6 +5,7 @@ var email_list = document.querySelector("#userlist-emaillist");
 var copy_button = document.querySelector("#userlist-emaillist-copy");
 var search_field = document.querySelector("#userlist-search");
 
+show_emails();
 userList.on("updated", show_emails);
 userList.on("searchStart", function() {userList.filter()});
 copy_button.onclick = function() {selectAndCopyText(email_list)};

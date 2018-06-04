@@ -20,7 +20,7 @@ This app may then become redundant.]]></description>
     </dependencies>
     <navigations>
         <navigation>
-            <name>User List</name>
+            <name>Benutzerliste</name>
             <route>userlist.page.index</route>
         </navigation>
     </navigations>

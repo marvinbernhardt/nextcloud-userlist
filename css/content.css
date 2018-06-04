@@ -1,5 +1,6 @@
 #userlist {
     margin: 16px;
+    overflow-x: scroll;
 }
 
 #userlist table {
