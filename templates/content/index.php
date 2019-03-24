@@ -10,7 +10,7 @@ style('userlist', 'content');
         <thead>
             <tr>
                 <th class="sort" data-sort="name">Name</th>
-                <th class="sort" data-sort="groups">Gruppen</th>
+                <th class="sort" data-sort="circles">Circles</th>
                 <th class="sort" data-sort="email">E-Mail-Adresse</th>
                 <th class="sort" data-sort="phone">Telefonnummer</th>
             </tr>
@@ -27,11 +27,11 @@ foreach($_['userlist'] as $user)
     <td class="name">
         <?php p($user_info->{'displayname'}->{'value'}); ?>
     </td>
-    <td class="groups">
+    <td class="circles">
 <?php
-    foreach(explode(", ", $user['groups']) as $group)
+    foreach(explode(", ", $user['circles']) as $circle)
     {
-        p($group);
+        p($circle);
 ?><br>
 <?php
     }

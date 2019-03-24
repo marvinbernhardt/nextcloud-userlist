@@ -1,4 +1,4 @@
-var userList = new List('userlist', {valueNames: ['name', 'groups', 'email', 'phone']});
+var userList = new List('userlist', {valueNames: ['name', 'circles', 'email', 'phone']});
 var navigation = document.querySelector("#userlist-navigation");
 var navigation_links = document.querySelectorAll("#userlist-navigation a");
 var email_list = document.querySelector("#userlist-emaillist");
@@ -22,7 +22,7 @@ for (var i = 0; i < navigation_links.length; i++) (function(i) {
             search_field.value = "";
             userList.filter(
                 function(item) {
-                    if (item.values().groups.includes(group.concat("<br>"))) {
+                    if (item.values().circles.includes(group.concat("<br>"))) {
                         return true;
                     } else {
                         return false;

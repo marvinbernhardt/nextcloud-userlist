@@ -7,12 +7,12 @@ style('userlist', 'navigation');
     <a href="#" search-group="">Alle</a>
 </li>
 <?php
-foreach($_['grouplist'] as $group)
+foreach($_['circlescircles'] as $circle)
 {
-    $gid = $group['gid'];
+    $name = $circle['name'];
 ?>
 <li>
-    <a href="#" search-group="<?php p($gid);?>"><?php p($gid);?></a>
+    <a href="#" search-group="<?php p($name);?>"><?php p($name);?></a>
 </li>
 <?php
 }
