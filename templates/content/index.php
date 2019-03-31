@@ -10,7 +10,7 @@ style('userlist', 'content');
         <thead>
             <tr>
                 <th class="sort" data-sort="name">Name</th>
-                <th class="sort" data-sort="circles">Circles</th>
+                <th class="sort" data-sort="circles">Kreise</th>
                 <th class="sort" data-sort="email">E-Mail-Adresse</th>
                 <th class="sort" data-sort="phone">Telefonnummer</th>
             </tr>
