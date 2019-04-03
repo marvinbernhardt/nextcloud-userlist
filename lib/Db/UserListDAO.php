@@ -21,21 +21,29 @@ class UserListDAO {
 SELECT
     accounts.uid,
     accounts.data AS account_data,
-    GROUP_CONCAT(DISTINCT group_user.gid SEPARATOR ", ") AS groups,
-    GROUP_CONCAT(DISTINCT circles_names.name SEPARATOR ", ") AS circles
+    circles,
+    levels
 FROM
     `*PREFIX*accounts` AS accounts
-    LEFT JOIN `*PREFIX*group_user` group_user ON accounts.uid=group_user.uid
     LEFT JOIN (
         SELECT
             circles_members.user_id,
-            circles_circles.name
+            GROUP_CONCAT(circles_circles.name SEPARATOR ", ") AS circles
         FROM
             `*PREFIX*circles_members` circles_members
         LEFT JOIN `*PREFIX*circles_circles` circles_circles ON circles_members.circle_id=LEFT(circles_circles.unique_id, 14)
-    ) circles_names ON accounts.uid=circles_names.user_id
-GROUP BY
-    accounts.uid
+        GROUP BY
+            circles_members.user_id
+    ) a ON a.user_id=accounts.uid
+    LEFT JOIN (
+        SELECT
+            circles_members.user_id,
+            GROUP_CONCAT(circles_members.level SEPARATOR ", ") as levels
+        FROM
+            `*PREFIX*circles_members` circles_members
+        GROUP BY
+            circles_members.user_id
+    ) b ON b.user_id=accounts.uid
 ORDER BY
     uid ASC;
             ';

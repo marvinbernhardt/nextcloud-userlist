@@ -22,7 +22,7 @@ for (var i = 0; i < navigation_links.length; i++) (function(i) {
             search_field.value = "";
             userList.filter(
                 function(item) {
-                    if (item.values().circles.includes(group.concat("<br>"))) {
+                    if (item.values().circles.includes("<span>".concat(group, "</span>"))) {
                         return true;
                     } else {
                         return false;

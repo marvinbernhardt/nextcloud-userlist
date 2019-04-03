@@ -29,13 +29,10 @@ class PageController extends Controller {
     public function index() {
         $userlistdao = new UserListDAO();
         $userlist = $userlistdao->return_userlist();
-        $grouplist = $userlistdao->return_grouplist();
         $circlescircles = $userlistdao->return_circles_circles();
         return new TemplateResponse('userlist', 'index', [
             'userlist' => $userlist,
-            'grouplist' => $grouplist,
             'circlescircles' => $circlescircles
         ]);
     }
-
 }

@@ -33,3 +33,7 @@
 #userlist th:hover {
     background-color: #1F9DC7;
 }
+
+.bold {
+    font-weight: bold;
+}

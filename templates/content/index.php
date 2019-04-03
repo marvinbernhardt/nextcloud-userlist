@@ -29,11 +29,21 @@ foreach($_['userlist'] as $user)
     </td>
     <td class="circles">
 <?php
-    foreach(explode(", ", $user['circles']) as $circle)
+    $circles = explode(", ", $user['circles']);
+    $levels = explode(", ", $user['levels']);
+    $ncircles = count($circles);
+    for($i=0; $i<$ncircles; $i++)
     {
-        p($circle);
-?><br>
-<?php
+        ?><span><?php
+        p($circles[$i]);
+        ?></span><?php
+        if($levels[$i] == '8')
+        {
+            ?><span class="bold"><?php
+            p(" (AP)");
+            ?></span><?php
+        }
+        ?><br><?php
     }
 ?>
     </td>
