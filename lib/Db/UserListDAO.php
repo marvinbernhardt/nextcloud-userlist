@@ -28,22 +28,14 @@ FROM
     LEFT JOIN (
         SELECT
             circles_members.user_id,
-            GROUP_CONCAT(circles_circles.name SEPARATOR ", ") AS circles
+            GROUP_CONCAT(circles_circles.name SEPARATOR ", ") AS circles,
+            GROUP_CONCAT(circles_members.level SEPARATOR ", ") as levels
         FROM
             `*PREFIX*circles_members` circles_members
         LEFT JOIN `*PREFIX*circles_circles` circles_circles ON circles_members.circle_id=LEFT(circles_circles.unique_id, 14)
         GROUP BY
             circles_members.user_id
     ) a ON a.user_id=accounts.uid
-    LEFT JOIN (
-        SELECT
-            circles_members.user_id,
-            GROUP_CONCAT(circles_members.level SEPARATOR ", ") as levels
-        FROM
-            `*PREFIX*circles_members` circles_members
-        GROUP BY
-            circles_members.user_id
-    ) b ON b.user_id=accounts.uid
 ORDER BY
     uid ASC;
             ';
